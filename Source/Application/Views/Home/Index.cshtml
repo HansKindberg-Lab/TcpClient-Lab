@@ -1,0 +1,29 @@
+﻿@model HomeViewModel
+<div class="card mb-3">
+	<div class="card-header">
+		<h1 class="h4 m-0 p-0">TlsClient-Lab</h1>
+	</div>
+	<div class="card-body">
+		<partial for="Form" name="Form" />
+		@if(Model.Exception != null)
+		{
+			<div class="alert alert-danger">
+				@Model.Exception
+			</div>
+		}
+		else if(Model.Result != null)
+		{
+			<div class="alert alert-success m-0">
+				<h2 class="h5">Result</h2>
+				<ul>
+					<li>
+						<strong>Available: </strong>@Model.Result.Available
+					</li>
+					<li>
+						<strong>Connected: </strong>@Model.Result.Connected
+					</li>
+				</ul>
+			</div>
+		}
+	</div>
+</div>
